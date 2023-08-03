@@ -1,0 +1,10 @@
+[Unit]
+Description=HWAssist server
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/resume
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind 0.0.0.0:8000 main:app
+
+[Install]
+WantedBy=multi-user.target
